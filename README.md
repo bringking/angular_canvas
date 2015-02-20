@@ -18,6 +18,7 @@ Which lets you easily make semi-complex canvases with ease. In the example below
 </div>
 ```
 The view directive is an attribute directive meant to contain the other canvas based views. This directive maintains an element reference to each child canvas, and exposes it's controller for use. Any child canvas can specify to inherit it's width from the parent view
+
 ### view options
 - ```scale```
 The scale at which to render the canvases on rasterzation. Also, child canvases use this scale by default. This is useful for HDPI screens. For example, your View container might be set to 500px, 500px using CSS, but the canvases need to be rendered at 1000px (scale = 2), in order to appear sharp on HDPI displays. 
@@ -29,12 +30,15 @@ Returns the height of the view
 Returns the width of the view
 - ```rasterizeView(quality = 1.0)```
 Rasterizes the entire view DOM as an image. This is done by creating another canvas based on the child canvases. Returns a data URI with the image encoded as a base64 string. Uses ```canvas.toDataURL("image/jpeg", quality);```
+
 ### view options
 - ```scale``` The scale to render any rastered view and child canvases
 - ```canvasApi``` This object gets added to the view options and exposes the ```rasterizeView``` method to the parent scope.
-##image-view
+
+## image-view
 The image-view directive draws a canvas with a particular image.
-###image-view options
+
+### image-view options
 ```
 $scope.imageOptions = {
             image: http://placehold.it/400x410,
@@ -51,9 +55,10 @@ The url of the image resource to draw on the canvas
   - ```height``` int || "inherit": The width of the canvas
   - ```width``` int || "inherit": The width of the canvas
 
-##text-view
+## text-view
 The text-view directive draws a canvas with a string of text.
-###text-view options
+
+### text-view options
 - ```text``` The text to display
 - ```color``` The CSS color string for the text
 - ```align``` The alignment of the text ("start","end","center","left","right")
@@ -65,9 +70,11 @@ The text-view directive draws a canvas with a string of text.
     - ```top``` The position of the canvas Y axis relative to the parent ```view```
     - ```left``` The position of the canvas X axis relative to the parent ```view```
     - ```padding``` The internal padding of the canvas
-##fill-view
+    
+## fill-view
 The fill-view directive draws a canvas with a particular color fill
-###fill-view options
+
+### fill-view options
 - ```color``` The CSS color of the fill
 - ```opacity``` The opacity of the canvas
 - ```layout```
