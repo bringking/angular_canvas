@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html id="ng-app" lang="en" ng-app="angularCanvas">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Angular Canvas</h1>
+<div ng-controller="Ctrl">
+    <!--our canvas based view controls -->
+    <div view id="main_canvas" options="viewOptions" style="width:400px; height:410px; margin:0 auto;">
+        <image-view options="imageOptions"></image-view>
+        <fill-view options="fillOptions"></fill-view>
+        <text-view options="textOptions"></text-view>
+    </div>
+</div>
+<script src="js/angular-canvas.js"></script>
+<script type="text/javascript">
+    var app = angular.module('angularCanvas');
+    app.controller("Ctrl", function( $scope ) {
+
+        /**
+         * Global view options
+         */
+        $scope.viewOptions = {
+            scale: 3
+        };
+
+        /**
+         * Set our fill options
+         */
+        $scope.fillOptions = {
+            color: "#01a2b4",
+            opacity: .4,
+            layout: {
+                height: "inherit",
+                width: "inherit"
+            }
+        };
+
+        $scope.images = [
+            {
+                height: 400,
+                width: 410,
+                src: "assets/images/image_two.jpg"
+            }];
+
+        /*text canvas options*/
+        $scope.textOptions = {
+            text: "Hello this is some long text",
+            color: "#fff",
+            align: "center",
+            font: "5em Arial,sans-serif",
+            lineHeight: 45,
+            layout: {
+                height: "inherit",
+                width: "inherit",
+                top: 80,
+                left: 0,
+                padding: 12
+            }
+
+        };
+        /**
+         * Set our image options
+         */
+        $scope.imageOptions = {
+            image: $scope.images[0],
+            layout: {
+                height: "inherit",
+                width: "inherit"
+            }
+
+        };
+
+    });
+</script>
+</body>
+</html>
