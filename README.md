@@ -20,8 +20,9 @@ Which lets you easily make semi-complex canvases with ease. In the example below
 The view directive is an attribute directive meant to contain the other canvas based views. This directive maintains an element reference to each child canvas, and exposes it's controller for use. Any child canvas can specify to inherit it's width from the parent view
 
 ### view options
-- ```scale```
+- ```scale``` Number:
 The scale at which to render the canvases on rasterzation. Also, child canvases use this scale by default. This is useful for HDPI screens. For example, your View container might be set to 500px, 500px using CSS, but the canvases need to be rendered at 1000px (scale = 2), in order to appear sharp on HDPI displays. 
+- ```canvasApi``` Object: This object gets added to the view options and exposes the ```rasterizeView``` method to the parent scope.
 
 ### view API
 - ```getHeight()``` 
@@ -30,10 +31,6 @@ Returns the height of the view
 Returns the width of the view
 - ```rasterizeView(quality = 1.0)```
 Rasterizes the entire view DOM as an image. This is done by creating another canvas based on the child canvases. Returns a data URI with the image encoded as a base64 string. Uses ```canvas.toDataURL("image/jpeg", quality);```
-
-### view options
-- ```scale``` The scale to render any rastered view and child canvases
-- ```canvasApi``` This object gets added to the view options and exposes the ```rasterizeView``` method to the parent scope.
 
 ## image-view
 The image-view directive draws a canvas with a particular image.
@@ -51,8 +48,8 @@ $scope.imageOptions = {
 - ```image```
 The url of the image resource to draw on the canvas
 - ```layout```
-  - ```height``` int || "inherit": The width of the canvas
-  - ```width``` int || "inherit": The width of the canvas
+  - ```height``` Number || "inherit": The width of the canvas
+  - ```width``` Number || "inherit": The width of the canvas
 
 ## text-view
 The text-view directive draws a canvas with a string of text.
@@ -79,20 +76,20 @@ $scope.textOptions = {
 - ```color``` String: The CSS color string for the text
 - ```align``` String: The alignment of the text ("start","end","center","left","right")
 - ```font``` String: The CSS font string e.g. "5em Arial,sans-serif"
-- ```lineHeight``` Int: The line height
+- ```lineHeight``` Number: The line height
 - ```layout```
-    - ```height``` Int: The height of the canvas
-    - ```width``` Int: The width of the canvas
-    - ```top``` Int: The position of the canvas Y axis relative to the parent ```view```
-    - ```left``` Int: The position of the canvas X axis relative to the parent ```view```
-    - ```padding``` Int: The internal padding of the canvas
+    - ```height``` Number: The height of the canvas
+    - ```width``` Number: The width of the canvas
+    - ```top``` Number: The position of the canvas Y axis relative to the parent ```view```
+    - ```left``` Number: The position of the canvas X axis relative to the parent ```view```
+    - ```padding``` Number: The internal padding of the canvas
     
 ## fill-view
 The fill-view directive draws a canvas with a particular color fill
 
 ### fill-view options
 - ```color``` String: The CSS color of the fill
-- ```opacity``` Double: The opacity of the canvas 
+- ```opacity``` Number: The opacity of the canvas 
 - ```layout```
-    - ```height``` Int||"inherit": The height of the canvas 
-    - ```width``` Int||"inherit": The width of the canvas
+    - ```height``` Number||"inherit": The height of the canvas 
+    - ```width``` Number||"inherit": The width of the canvas
