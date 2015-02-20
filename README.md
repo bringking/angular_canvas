@@ -41,12 +41,11 @@ The image-view directive draws a canvas with a particular image.
 ### image-view options
 ```
 $scope.imageOptions = {
-            image: http://placehold.it/400x410,
-            layout: {
-                height: "inherit",
-                width: "inherit"
-            }
-
+    image: http://placehold.it/400x410,
+    layout: {
+        height: "inherit",
+        width: "inherit"
+    }
 };
 ```
 - ```image```
