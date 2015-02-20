@@ -25,8 +25,10 @@ Returns the height of the view
 - ```getWidth()```
 Returns the width of the view
 - ```rasterizeView(quality = 1.0)```
-Rasterizes the entire view DOM as an image. This is done by creating another canvas based on the child canvases
-
+Rasterizes the entire view DOM as an image. This is done by creating another canvas based on the child canvases. Returns a data URI with the image encoded as a base64 string. Uses ```canvas.toDataURL("image/jpeg", quality);```
+### view options
+- ```scale``` The scale to render any rastered view and child canvases
+- ```canvasApi``` This object gets added to the view options and exposes the ```rasterizeView``` method to the parent scope.
 ##image-view
 The image-view directive draws a canvas with a particular image.
 ###image-view options
@@ -42,7 +44,29 @@ $scope.imageOptions = {
 ```
 - ```image```
 The url of the image resource to draw on the canvas
-- ```layout``` An object with height and width
+- ```layout```
   - ```height``` int || "inherit": The width of the canvas
   - ```width``` int || "inherit": The width of the canvas
 
+##text-view
+The text-view directive draws a canvas with a string of text.
+###text-view options
+- ```text``` The text to display
+- ```color``` The CSS color string for the text
+- ```align``` The alignment of the text ("start","end","center","left","right")
+- ```font``` The CSS font string e.g. "5em Arial,sans-serif"
+- ```lineHeight``` The line height
+- ```layout```
+    - ```height``` The height of the canvas
+    - ```width``` The width of the canvas
+    - ```top``` The position of the canvas Y axis relative to the parent ```view```
+    - ```left``` The position of the canvas X axis relative to the parent ```view```
+    - ```padding``` The internal padding of the canvas
+##fill-view
+The fill-view directive draws a canvas with a particular color fill
+###fill-view options
+- ```color``` The CSS color of the fill
+- ```opacity``` The opacity of the canvas
+- ```layout```
+    - ```height``` The height of the canvas 
+    - ```width``` The width of the canvas
