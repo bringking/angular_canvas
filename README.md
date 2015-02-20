@@ -1,6 +1,6 @@
 # angular_canvas
 
-A set of canvas directives to create 2d canvases in a declarative way.
+A set of canvas directives to create 2D canvases in a declarative way.
 ```
     <div view id="main" options="viewOptions" style="width:400px; height:410px; margin:0 auto;">
         <image-view options="imageOptions"></image-view>
