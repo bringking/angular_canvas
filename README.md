@@ -57,25 +57,42 @@ The url of the image resource to draw on the canvas
 ## text-view
 The text-view directive draws a canvas with a string of text.
 
+```
+$scope.textOptions = {
+    text: "Hello this is some long text",
+    color: "#fff",
+    align: "center",
+    font: "5em Arial,sans-serif",
+    lineHeight: 45,
+    layout: {
+        height: "inherit",
+        width: "inherit",
+        top: 80,
+        left: 0,
+        padding: 12
+    }
+};
+```
+
 ### text-view options
-- ```text``` The text to display
-- ```color``` The CSS color string for the text
-- ```align``` The alignment of the text ("start","end","center","left","right")
-- ```font``` The CSS font string e.g. "5em Arial,sans-serif"
-- ```lineHeight``` The line height
+- ```text``` String: The text to display
+- ```color``` String: The CSS color string for the text
+- ```align``` String: The alignment of the text ("start","end","center","left","right")
+- ```font``` String: The CSS font string e.g. "5em Arial,sans-serif"
+- ```lineHeight``` Int: The line height
 - ```layout```
-    - ```height``` The height of the canvas
-    - ```width``` The width of the canvas
-    - ```top``` The position of the canvas Y axis relative to the parent ```view```
-    - ```left``` The position of the canvas X axis relative to the parent ```view```
-    - ```padding``` The internal padding of the canvas
+    - ```height``` Int: The height of the canvas
+    - ```width``` Int: The width of the canvas
+    - ```top``` Int: The position of the canvas Y axis relative to the parent ```view```
+    - ```left``` Int: The position of the canvas X axis relative to the parent ```view```
+    - ```padding``` Int: The internal padding of the canvas
     
 ## fill-view
 The fill-view directive draws a canvas with a particular color fill
 
 ### fill-view options
-- ```color``` The CSS color of the fill
-- ```opacity``` The opacity of the canvas
+- ```color``` String: The CSS color of the fill
+- ```opacity``` Double: The opacity of the canvas 
 - ```layout```
-    - ```height``` The height of the canvas 
-    - ```width``` The width of the canvas
+    - ```height``` Int||"inherit": The height of the canvas 
+    - ```width``` Int||"inherit": The width of the canvas
