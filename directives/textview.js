@@ -12,10 +12,14 @@ module.exports = [function() {
         template: `<canvas></canvas>`,
         link( scope, element, attrs, view ) {
 
+            //register with the parent view
+            view.registerChild(scope.options.layout);
+
             /**
              * Get our canvas
              */
             const canvas = element.children("canvas")[0];
+
             /**
              * Get our canvas context
              * @type {CanvasRenderingContext2D}
@@ -89,7 +93,7 @@ module.exports = [function() {
             //add watcher
             scope.$watch("options", function() {
                 draw_text();
-            },true);
+            }, true);
 
             //draw initial
             setBounds();

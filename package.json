@@ -17,11 +17,12 @@
   },
   "homepage": "https://github.com/bringking/angular_canvas",
   "dependencies": {
-    "angular": "1.3.13"
+    "angular": "1.3.13",
+    "css-layout":"git+https://github.com/facebook/css-layout.git#74a031e39688ece22dc6e5a5f5635e50da1b8ebb"
   },
   "devDependencies": {
-    "6to5": "^3.6.5",
-    "6to5ify": "^4.1.1",
+    "babel": "^4.3.0",
+    "babelify": "^5.0.3",
     "gulp": "^3.8.11",
     "gulp-browserify": "^0.5.1"
   }

@@ -1,4 +1,4 @@
-require("6to5/polyfill");
+require("babel/polyfill");
 require('angular');
 
 /**
@@ -7,7 +7,9 @@ require('angular');
 var app = angular.module("angularCanvas", []);
 
 //bring in dependencies
-require("./modules/directives/index");
+require("./controllers/index");
+require("./directives/index");
+
 
 //add a run function
 app.run(["$log", function( $log ) {

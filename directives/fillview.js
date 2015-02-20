@@ -13,6 +13,9 @@ module.exports = [function() {
 
         link( scope, element, attrs, view ) {
 
+            //register with the parent view
+            view.registerChild(scope.options.layout);
+
             /**
              * Get our canvas
              */

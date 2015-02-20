@@ -4,11 +4,11 @@ var browserify = require('gulp-browserify');
 // Basic usage
 gulp.task('example', function() {
 
-    gulp.src('modules/angular-canvas.js')
+    gulp.src('./angular-canvas.js')
         .pipe(browserify({
             insertGlobals: true,
-            transform: ['6to5ify'],
-            debug: !gulp.env.production
+            transform: ['babelify'],
+            debug: true
         }))
         .pipe(gulp.dest('./example/js'))
 });
@@ -18,7 +18,8 @@ gulp.task('example', function() {
  */
 gulp.task('watch', ['example'], function() {
     //watch for JS changes
-    gulp.watch('./modules/**/*.*', ['example']);
+    gulp.watch('./directives/**/*.*', ['example']);
+    gulp.watch('./controllers/**/*.*', ['example']);
 });
 
 gulp.task("default", ['watch']);

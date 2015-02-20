@@ -13,10 +13,14 @@ module.exports = [function() {
 
         link( scope, element, attrs, view ) {
 
+            //register with the parent view
+            view.registerChild(scope.options.layout);
+            
             /**
              * Get our canvas
              */
             const canvas = element.children("canvas")[0];
+
             /**
              * Get our canvas context
              * @type {CanvasRenderingContext2D}
