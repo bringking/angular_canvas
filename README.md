@@ -9,6 +9,7 @@ A set of canvas directives to create 2d canvases in a declarative way.
     </div>
 ```
 Which lets you easily make semi-complex canvases with ease. In the example below there is a layered image, fill and text. 
+
 ![angular_canvas example](http://i.imgur.com/j8p9V1o.png)
 
 ## view
