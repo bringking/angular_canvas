@@ -1,7 +1,7 @@
 # angular_canvas
 ## Coming soon
 I hope to update this with the ability to layout canvas using the awesome [css layout](https://github.com/facebook/css-layout) lib from Facebook.
-
+## Overview
 A set of canvas directives to create 2D canvases in a declarative way.
 ```
     <div view id="main" options="viewOptions" style="width:400px; height:410px; margin:0 auto;">
