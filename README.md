@@ -1,4 +1,6 @@
 # angular_canvas
+## Coming soon
+I hope to update this with the ability to layout canvas using the awesome [css layout](https://github.com/facebook/css-layout) lib from Facebook.
 
 A set of canvas directives to create 2D canvases in a declarative way.
 ```
